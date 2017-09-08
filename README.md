@@ -47,6 +47,14 @@ To be able to run the specs, the env var `ROCKETFUEL_API_SANDBOX_AUTH_TOKEN` is 
 
 We run rake rubocop to make sure, everything looks good.
 
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the RocketfuelApi project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rocketfuel_api/blob/master/CODE_OF_CONDUCT.md).
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/ad2games/rocketfuel_api.
