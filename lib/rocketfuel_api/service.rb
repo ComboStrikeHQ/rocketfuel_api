@@ -20,7 +20,7 @@ class RocketfuelApi::Service
   end
 
   def uri_suffix
-    file_path = File.join(RocketfuelApi.root, 'lib/config/endpoints_for_services.yaml')
+    file_path = RocketfuelApi.root.join('lib', 'config', 'endpoints_for_services.yaml')
     endpoints = YAML.load_file(file_path)
     endpoint  = endpoints['service'][name]
 
