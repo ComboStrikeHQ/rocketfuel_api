@@ -56,7 +56,7 @@ class RocketfuelApi::Service
   end
 
   def update(id, route_params = {}, body = {})
-    raise(AppnexusApi::NotImplemented, 'Service is read-only.') if @read_only
+    raise(RocketfuelApi::NotImplemented, 'Service is read-only.') if @read_only
 
     body = { uri_name => body }
     route = @connection.build_url(uri_suffix, route_params.merge('id' => id))
