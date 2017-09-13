@@ -19,12 +19,13 @@ class RocketfuelApi::Service
     end
   end
 
-  def plural_name
-    name + 's'
-  end
-
   def uri_suffix
-    plural_name
+    file_path = RocketfuelApi.root.join('lib', 'config', 'endpoints_for_services.yaml')
+    endpoints = YAML.load_file(file_path)
+    endpoint  = endpoints['service'][name]
+
+    endpoint || raise(RocketfuelApi::NotImplemented,
+      format('No endpoint for service %s available.', name))
   end
 
   def get(id, params = {})
@@ -42,8 +43,6 @@ class RocketfuelApi::Service
   end
 
   def create(route_params = {}, body = {})
-    raise(RocketfuelApi::NotImplemented, 'Service is read-only.') if @read_only
-
     body = { uri_name => body }
     route = @connection.build_url(uri_suffix, route_params)
     response = @connection.post(route, body)
@@ -56,8 +55,6 @@ class RocketfuelApi::Service
   end
 
   def update(id, route_params = {}, body = {})
-    raise(AppnexusApi::NotImplemented, 'Service is read-only.') if @read_only
-
     body = { uri_name => body }
     route = @connection.build_url(uri_suffix, route_params.merge('id' => id))
     response = @connection.put(route, body)
@@ -78,7 +75,7 @@ class RocketfuelApi::Service
     when Hash
       resource_class.new(response, self)
     else
-      raise format("Can't parse response, it's a %s", response.class)
+      raise(RocketfuelApi::NotImplemented, format('Unknown response type %s.', response.class))
     end
   end
 end
