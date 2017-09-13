@@ -43,8 +43,6 @@ class RocketfuelApi::Service
   end
 
   def create(route_params = {}, body = {})
-    raise(RocketfuelApi::NotImplemented, 'Service is read-only.') if @read_only
-
     body = { uri_name => body }
     route = @connection.build_url(uri_suffix, route_params)
     response = @connection.post(route, body)
@@ -57,8 +55,6 @@ class RocketfuelApi::Service
   end
 
   def update(id, route_params = {}, body = {})
-    raise(RocketfuelApi::NotImplemented, 'Service is read-only.') if @read_only
-
     body = { uri_name => body }
     route = @connection.build_url(uri_suffix, route_params.merge('id' => id))
     response = @connection.put(route, body)
