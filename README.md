@@ -1,6 +1,6 @@
 # RocketfuelApi [![CircleCI](https://circleci.com/gh/ad2games/rocketfuel_api.svg?style=svg)](https://circleci.com/gh/ad2games/rocketfuel_api)
 
-Client library for [Rocketfuel API](https://api.rocketfuel.com)
+Unofficial client library for [Rocketfuel API](https://api.rocketfuel.com)
 
 ## Installation
 
