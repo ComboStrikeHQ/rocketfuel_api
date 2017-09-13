@@ -6,8 +6,4 @@ class RocketfuelApi::Service::LineItem < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'line_items'
-  end
 end

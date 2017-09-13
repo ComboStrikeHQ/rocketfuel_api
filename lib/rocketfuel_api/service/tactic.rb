@@ -6,8 +6,4 @@ class RocketfuelApi::Service::Tactic < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'tactics'
-  end
 end

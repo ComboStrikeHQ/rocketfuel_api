@@ -6,8 +6,4 @@ class RocketfuelApi::Service::AdvertisementCard < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'ads/cards'
-  end
 end

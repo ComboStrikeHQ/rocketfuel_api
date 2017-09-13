@@ -6,8 +6,4 @@ class RocketfuelApi::Service::Campaign < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'campaigns'
-  end
 end

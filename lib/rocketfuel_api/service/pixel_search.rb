@@ -6,8 +6,4 @@ class RocketfuelApi::Service::PixelSearch < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'pixels/search'
-  end
 end

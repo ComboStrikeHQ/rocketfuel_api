@@ -6,8 +6,4 @@ class RocketfuelApi::Service::AdvertisementAdAssignment < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'ads/ad_assignments'
-  end
 end

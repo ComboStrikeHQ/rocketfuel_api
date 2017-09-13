@@ -6,8 +6,4 @@ class RocketfuelApi::Service::Reporting < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'reports'
-  end
 end

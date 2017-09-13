@@ -6,8 +6,4 @@ class RocketfuelApi::Service::Company < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'companies'
-  end
 end

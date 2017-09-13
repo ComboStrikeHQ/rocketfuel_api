@@ -6,8 +6,4 @@ class RocketfuelApi::Service::CampaignPixel < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'campaigns/pixels'
-  end
 end

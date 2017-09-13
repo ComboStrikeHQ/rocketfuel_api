@@ -6,8 +6,4 @@ class RocketfuelApi::Service::ThridPartyPixelSearch < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'thrid_party_pixels/search'
-  end
 end

@@ -6,8 +6,4 @@ class RocketfuelApi::Service::Flight < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'flights'
-  end
 end

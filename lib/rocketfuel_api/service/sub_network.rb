@@ -6,8 +6,4 @@ class RocketfuelApi::Service::SubNetwork < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'sub_networks'
-  end
 end

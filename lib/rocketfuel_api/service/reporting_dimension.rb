@@ -6,8 +6,4 @@ class RocketfuelApi::Service::ReportingDimension < RocketfuelApi::Service
 
     super(connection)
   end
-
-  def uri_suffix
-    'reports/dimensions'
-  end
 end
