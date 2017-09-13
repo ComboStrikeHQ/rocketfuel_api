@@ -19,12 +19,13 @@ class RocketfuelApi::Service
     end
   end
 
-  def plural_name
-    name + 's'
-  end
-
   def uri_suffix
-    plural_name
+    file_path = File.join(RocketfuelApi.root, 'lib/config/endpoints_for_services.yaml')
+    endpoints = YAML.load_file(file_path)
+    endpoint  = endpoints['service'][name]
+
+    endpoint || raise(RocketfuelApi::NotImplemented,
+                      'No endpoint for service %s available.' % name)
   end
 
   def get(id, params = {})
@@ -78,7 +79,7 @@ class RocketfuelApi::Service
     when Hash
       resource_class.new(response, self)
     else
-      raise format("Can't parse response, it's a %s", response.class)
+      raise(RocketfuelApi::NotImplemented, "Can't parse the response of type %s." % response.class)
     end
   end
 end
