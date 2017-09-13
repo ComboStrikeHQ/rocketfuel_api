@@ -25,7 +25,7 @@ class RocketfuelApi::Service
     endpoint  = endpoints['service'][name]
 
     endpoint || raise(RocketfuelApi::NotImplemented,
-                      'No endpoint for service %s available.' % name)
+      format('No endpoint for service %s available.', name))
   end
 
   def get(id, params = {})
@@ -75,7 +75,7 @@ class RocketfuelApi::Service
     when Hash
       resource_class.new(response, self)
     else
-      raise(RocketfuelApi::NotImplemented, "Can't parse the response of type %s." % response.class)
+      raise(RocketfuelApi::NotImplemented, format('Unknown response type %s.', response.class))
     end
   end
 end
