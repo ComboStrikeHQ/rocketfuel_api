@@ -20,9 +20,11 @@ class RocketfuelApi::Service
   end
 
   def uri_suffix
-    file_path = RocketfuelApi.root.join('lib', 'config', 'endpoints_for_services.yaml')
-    endpoints = YAML.load_file(file_path)
-    endpoint  = endpoints['service'][name]
+    @endpoints ||= YAML.load_file(
+      RocketfuelApi.root.join('lib', 'config', 'endpoints_for_services.yaml')
+    )
+
+    endpoint  = @endpoints['service'][name]
 
     endpoint || raise(RocketfuelApi::NotImplemented,
       format('No endpoint for service %s available.', name))
