@@ -28,7 +28,7 @@ connection = RocketfuelApi::Connection.new(
 
 # for production
 connection = RocketfuelApi::Connection.new(
-  uri: 'https://api.rocketfuel.com/2016'
+  uri: 'https://api.rocketfuel.com/2016',
   auth_token: ENV['ROCKETFUEL_API_AUTH_TOKEN']
 )
 
@@ -43,9 +43,12 @@ Note: Only the `Company` Service `GET` requests are tested so far.
 
 ## Development
 
-To be able to run the specs, the env var `ROCKETFUEL_API_SANDBOX_AUTH_TOKEN` is needed.
+Run specs with `bundle exec rspec`.
 
-We run rake rubocop to make sure, everything looks good.
+To recreate or create new VCR episodes, a proper value for env var `ROCKETFUEL_API_SANDBOX_AUTH_TOKEN` is needed.
+We recommend that you set it in `.env.test` file. 
+
+We run `rake rubocop` to make sure, everything looks good.
 
 ## License
 
