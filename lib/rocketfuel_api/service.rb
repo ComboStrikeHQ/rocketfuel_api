@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'yaml'
+
 class RocketfuelApi::Service
   def initialize(connection)
     @connection = connection
