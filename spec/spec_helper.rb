@@ -31,6 +31,7 @@ VCR.configure do |c|
     i.request.headers.delete('X-Auth-Token')
     i.response.headers.delete('Set-Cookie')
     i.response.headers.delete('X-Auth-Token')
+    i.response.headers.delete('X-Signed-In-With')
   end
 
   c.filter_sensitive_data('rocketfuel-api-sandbox-auth-token') do

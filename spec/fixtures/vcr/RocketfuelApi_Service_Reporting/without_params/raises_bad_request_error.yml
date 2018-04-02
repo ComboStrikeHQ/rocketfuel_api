@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api-sandbox.rocketfuel.com/2016/reports
+    body:
+      encoding: UTF-8
+      string: '{"use_campaign_currency":"true","use_campaign_time_zone":"true"}'
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 02 Apr 2018 19:56:01 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      X-Request-Id:
+      - f658f07c-71ce-4bdd-880c-09be82b7ea3f
+      Content-Encoding:
+      - chunked
+      Access-Control-Allow-Origin:
+      - "*"
+      Sec-Websocket-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Execution-Time:
+      - 0.000s
+      Success-Status:
+      - '0'
+      Api-Version:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: '"You must provide a ''start_date'' argument\nYou must provide a ''end_date''
+        argument\nYou must provide a ''metrics'' argument"'
+    http_version: 
+  recorded_at: Mon, 02 Apr 2018 19:56:01 GMT
+recorded_with: VCR 3.0.3

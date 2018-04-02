@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api-sandbox.rocketfuel.com/2016/reports
+    body:
+      encoding: UTF-8
+      string: '{"use_campaign_currency":"true","use_campaign_time_zone":"true","start_date":"2018-03-21","end_date":"2018-03-22","dimensions":["date"],"metrics":["impressions","clicks"]}'
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 02 Apr 2018 19:56:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      X-Request-Id:
+      - a4f335e0-e73b-4f72-ae06-6c903446b637
+      Content-Encoding:
+      - chunked
+      Access-Control-Allow-Origin:
+      - "*"
+      Sec-Websocket-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Execution-Time:
+      - 0.179s
+      Success-Status:
+      - '1'
+      Api-Version:
+      - '1'
+      Token:
+      - rocketfuel-api-sandbox-auth-token
+    body:
+      encoding: UTF-8
+      string: '[{"date":"2018-03-22","impressions":21662,"clicks":38},{"date":"2018-03-21","impressions":28104,"clicks":56}]'
+    http_version: 
+  recorded_at: Mon, 02 Apr 2018 19:56:03 GMT
+recorded_with: VCR 3.0.3
