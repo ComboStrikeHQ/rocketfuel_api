@@ -26,7 +26,7 @@ class RocketfuelApi::Service
       RocketfuelApi.root.join('lib', 'config', 'endpoints_for_services.yaml')
     )
 
-    endpoint  = @@endpoints['service'][name]
+    endpoint = @@endpoints['service'][name]
 
     endpoint || raise(RocketfuelApi::NotImplemented,
       format('No endpoint for service %s available.', name))

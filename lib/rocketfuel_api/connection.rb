@@ -17,4 +17,8 @@ class RocketfuelApi::Connection
   def get(uri_suffix, params = {})
     @connection.get(uri_suffix, params)
   end
+
+  def post(uri_suffix, params = {})
+    @connection.post(uri_suffix, params)
+  end
 end
